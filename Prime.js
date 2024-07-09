@@ -1,7 +1,7 @@
 const readline = require("readline");
 const connection = require("./connection");
 
-// Function to check if a number is prime
+// check if a number is prime
 function isPrime(num) {
   if (num <= 1) return false;
   if (num <= 3) return true;
@@ -9,10 +9,10 @@ function isPrime(num) {
   // Check if num is divisible by any number from 2 to sqrt(num)
   for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) {
-      return false; // Found a divisor, hence not prime
+      return false; // Found a divisor,it is not prime
     }
   }
-  return true; // No divisors found, hence prime
+  return true; // No divisors found, it is prime
 }
 
 // m2 start
@@ -97,7 +97,7 @@ function generatePrimes(start, end) {
     // Iterate through each number in the range
     for (let num = start; num <= end; num++) {
       if (isPrime(num)) {
-        primes.push(num); // If prime, add to the list
+        primes.push(num); // If prime, add to the primes
       }
     }
     return resolve(primes);
@@ -149,7 +149,7 @@ rl.question("Please enter the starting number: ", (start) => {
         case 2: {
           primeNumbers = await sieveOfEratosthenes(start, end).then(
             (res) => res
-          ); //m2
+          ); 
           // console.log("2st", option);
           methodType = "Sieve of Eratosthenes";
           break;
