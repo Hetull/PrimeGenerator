@@ -11,9 +11,7 @@ connection.connect((err) => {
   if (err) {
     console.error("Error connecting to MySQL database: ", json.stringify(err));
     return;
-  } else {
   }
-  // console.log("Connected to MySQL database as id " + connection.threadId);
 });
 
 module.exports = connection;
